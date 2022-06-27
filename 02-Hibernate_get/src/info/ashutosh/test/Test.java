@@ -12,10 +12,16 @@ public class Test {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session openSession = HibernateUtil.getSession();
 
-		Product product2 = openSession.get(Product.class, 1l);
+		Product product2 = openSession.get(Product.class, 10l); // Use Load Or Get
 
 		if (product2 != null) {
-			System.out.println(product2);
+			try {
+				System.out.println(product2);
+				
+			} catch (Exception e) {
+				
+				System.out.println("Record Not Found ! - With Exception.");
+			}
 		} else {
 			System.out.println("Record Not Found !");
 		}
