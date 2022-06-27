@@ -13,12 +13,15 @@ public class Test {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session openSession = HibernateUtil.getSession();
 
+		// Product product = openSession.get(Product.class, 1l);
 		Product product = new Product();
 		product.setPid(1l);
 		product.setName("Updated");
 
 		Transaction beginTransaction = openSession.beginTransaction();
 
+		// update only provided column value and remaining will be marked as null
+		// according to entity class column data type
 		openSession.update(product);
 
 		beginTransaction.commit();
