@@ -14,11 +14,12 @@ public class Test {
 
 		Product product2 = openSession.get(Product.class, 1l);
 
-		
-		/*
-		 * if (product2!=null) { System.out.println(product2); }else {
-		 * System.out.println("Record Not Found !"); }
-		 */
+		if (product2 != null) {
+			System.out.println(product2);
+		} else {
+			System.out.println("Record Not Found !");
+		}
+
 		openSession.close();
 		sessionFactory.close();
 
