@@ -17,10 +17,10 @@ public class Test {
 		if (product2 != null) {
 			try {
 				System.out.println(product2);
-				
+
 			} catch (Exception e) {
-				
 				System.out.println("Record Not Found ! - With Exception.");
+
 			}
 		} else {
 			System.out.println("Record Not Found !");
