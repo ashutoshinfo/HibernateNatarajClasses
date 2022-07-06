@@ -23,6 +23,7 @@ import jakarta.persistence.Table;
 @Entity
 //@DynamicInsert(true)
 //@DynamicUpdate(true)
+
 @Table(name = "Student_Information")
 
 public class StudentInformation implements Serializable {
