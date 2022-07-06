@@ -13,7 +13,7 @@ public class SelectAssociationMapping {
 		// HibernateUtil.getSessionFactory();
 		Session openSession = HibernateUtil.getSession();
 
-		SelectionQuery<?> createSelectionQuery = openSession.createSelectionQuery("from StudentInformation");
+		SelectionQuery<?> createSelectionQuery = openSession.createSelectionQuery("from StudentInformation where sId=1");
 
 		List<?> resultList = createSelectionQuery.getResultList();
 
