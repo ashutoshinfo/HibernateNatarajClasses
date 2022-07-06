@@ -9,10 +9,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedStoredProcedureQuery;
+import jakarta.persistence.ParameterMode;
+import jakarta.persistence.StoredProcedureParameter;
 
 @Entity
 @DynamicInsert(true)
 @DynamicUpdate(true)
+//@NamedNativeQuery(name = "getByStartingCarecter", query = "get_all_actors_Name_start_with_(?)", resultClass = Actor.class, callable = true)
+//@NamedStoredProcedureQuery(name = "getByStartingCarecter", procedureName = "get_all_actors_Name_start_with_", parameters = { @StoredProcedureParameter(mode = ParameterMode.IN, name = "charAt", type = String.class), @StoredProcedureParameter(mode = ParameterMode.OUT, type = Actor.class, name = "List") })
+
+@NamedStoredProcedureQuery(
+    name = "getByStartingCarecter", 
+    procedureName = "get_all_actors_Name_start_with_", 
+    resultClasses = Actor.class, 
+    parameters = {
+        @StoredProcedureParameter(mode = ParameterMode.IN, type = String.class)
+    }
+)
 public class Actor implements Serializable {
 
 	private static final long serialVersionUID = 1L;
