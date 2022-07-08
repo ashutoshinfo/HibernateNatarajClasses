@@ -19,7 +19,7 @@ public class SelectAssociationMapping {
 		
 		Transaction beginTransaction = openSession.beginTransaction();
 		
-		BankCustomer bc1 = new BankCustomer("Ashutosh", Set.of(new BankAccount("Saving", 12345l)));
+		BankCustomer bc1 = new BankCustomer("Ashutosh", Set.of(new BankAccount("Saving", 123485l)));
 
 		openSession.persist(bc1);
 		beginTransaction.commit();
